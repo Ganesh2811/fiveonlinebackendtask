@@ -74,8 +74,12 @@ app.post("/share", async (req, resp)=>{
         console.error('Error: ', error);
         resp.status(500).send({ result: "Internal Server Error" });
     }
-})
+});
 
+app.get("/",(req,resp)=>{
+    resp.send("api is not working")
+    console.log("api is working");
+})
 app.listen(process.env.PORT, ()=>{
     console.log("port is running");
 });
